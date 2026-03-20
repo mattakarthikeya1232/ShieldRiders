@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>ShieldRider</title>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="style.css">
+
+  <!-- LOTTIE (REAL ANIMATION) -->
+  <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+</head>
+
+<body>
+
+  <!-- HOME -->
+  <div id="home" class="container">
+    <h1>ShieldRider</h1>
+    <p>Automatic Insurance for Gig Riders</p>
+
+    <button onclick="openForm()">🌧 Heavy Rain Claim</button>
+    <button onclick="openForm()">🌫 AQI Hazard Claim</button>
+    <button onclick="openForm()">🚫 Curfew Claim</button>
+  </div>
+
+  <!-- FORM -->
+  <div id="formPage" class="container hidden">
+    <h2>Claim Verification</h2>
+
+    <input type="text" placeholder="Rider Name"><br>
+    <input type="text" placeholder="Policy ID (e.g. POL-1023)"><br>
+    <input type="text" placeholder="City (e.g. Chennai)"><br>
+
+    <label class="checkbox">
+      <input type="checkbox" id="agree">
+      I confirm GPS location & policy details are correct
+    </label>
+
+    <button onclick="processClaim()">Verify & Proceed</button>
+  </div>
+
+  <!-- LOADING -->
+  <div id="loadingPage" class="container hidden">
+    <h2>🔄 Processing Claim...</h2>
+    <div class="loader"></div>
+    <p>AI fraud check + GPS verification in progress</p>
+  </div>
+
+  <!-- SUCCESS -->
+  <div id="successPage" class="container hidden">
+    <h1 class="success">✔ Claim Approved</h1>
+    <h2>₹200 Credited via UPI</h2>
+
+    <p class="whatsapp">
+      📱 "₹200 credited. Stay safe today — ShieldRider"
+    </p>
+
+    <div class="animation"></div>
+  </div>
+
+  <!-- 🚴 GLOBAL RIDER ANIMATION -->
+  <div class="bottom-rider">
+    <lottie-player 
+      src="https://assets9.lottiefiles.com/packages/lf20_j1adxtyb.json"
+      background="transparent"
+      speed="1"
+      loop
+      autoplay>
+    </lottie-player>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
