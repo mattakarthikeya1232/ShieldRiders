@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>ShieldRider Demo</title>
+  <style>
+    body { font-family: Arial; text-align: center; margin-top: 50px; }
+    button { padding: 10px 20px; font-size: 16px; }
+    #output { margin-top: 20px; font-size: 18px; }
+  </style>
+</head>
+<body>
+
+<h1>🛡️ ShieldRider Prototype</h1>
+<p>Simulate Insurance Payout</p>
+
+<button onclick="runDemo()">Trigger Rain Event</button>
+
+<div id="output"></div>
+
+<script>
+function runDemo() {
+  document.getElementById("output").innerHTML =
+    "🌧 Rain detected in Chennai...<br>" +
+    "📍 GPS Verified...<br>" +
+    "🤖 Fraud Check Passed...<br>" +
+    "📄 Policy Active...<br><br>" +
+    "💸 ₹200 Credited via UPI (Simulated)";
+}
+</script>
+
+</body>
+</html>
