@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>ShieldRider Demo</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header>
+  <h1>🛡️ ShieldRider</h1>
+  <p>₹50/week → Instant protection for delivery riders</p>
+  <p class="tagline">This is a simulation of our real-time parametric insurance engine</p>
+</header>
+
+<div class="container">
+  <h2>Simulate Event</h2>
+
+  <button class="rain" onclick="runDemo('rain')">🌧 Heavy Rain</button>
+  <button class="aqi" onclick="runDemo('aqi')">🌫 Hazardous AQI</button>
+  <button class="curfew" onclick="runDemo('curfew')">🚫 Curfew</button>
+
+  <div id="output">Click a trigger to start simulation</div>
+</div>
+
+<script>
+function runDemo(type) {
+
+  let amount = "";
+  let eventText = "";
+
+  if(type === "rain") {
+    amount = "₹200";
+    eventText = "🌧 Heavy rainfall detected (>50mm/hr)";
+  }
+  else if(type === "aqi") {
+    amount = "₹150";
+    eventText = "🌫 AQI > 300 detected";
+  }
+  else {
+    amount = "₹300";
+    eventText = "🚫 Government curfew detected";
+  }
+
+  const output = document.getElementById("output");
+
+  output.innerHTML = "⏳ Detecting event...";
+
+  setTimeout(() => {
+    output.innerHTML = eventText;
+  }, 1000);
+
+  setTimeout(() => {
+    output.innerHTML += "<br>📍 GPS Verified (Chennai Zone)";
+  }, 2000);
+
+  setTimeout(() => {
+    output.innerHTML += "<br>📄 Policy Active (₹50/week)";
+  }, 3000);
+
+  setTimeout(() => {
+    output.innerHTML += "<br>🤖 Fraud Check: 94/100 ✅";
+  }, 4000);
+
+  setTimeout(() => {
+    output.innerHTML += "<br><br>💸 " + amount + " Sent via UPI";
+  }, 5000);
+
+  setTimeout(() => {
+    output.innerHTML += "<br>📲 WhatsApp Notification Sent";
+  }, 6000);
+
+  setTimeout(() => {
+    output.innerHTML += "<div class='success'>✔ Payout Completed in < 60 seconds</div>";
+  }, 7000);
+}
+</script>
+
+</body>
+</html>
